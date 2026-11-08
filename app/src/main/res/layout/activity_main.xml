@@ -1,19 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<!-- 1) الجذر: LinearLayout عمودي -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="24dp">
 
+    <!-- 2) خانة اسم المسافر -->
+    <EditText
+        android:id="@+id/et_nom_aa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_nom"
+        android:inputType="textPersonName" />
+
+    <!-- 3) خانة سنة الميلاد (أرقام فقط) -->
+    <EditText
+        android:id="@+id/et_naissance_aa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_naissance"
+        android:inputType="number" />
+
+    <!-- 4) خانة سنة الوجهة (أرقام فقط) -->
+    <EditText
+        android:id="@+id/et_destination_aa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_destination"
+        android:inputType="number" />
+
+    <!-- 5) عنوان سبب السفر -->
     <TextView
+        android:id="@+id/tv_motif_aa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="16dp"
+        android:text="@string/label_motif"
+        android:textStyle="bold" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- 6) مجموعة أزرار الراديو: واحد فقط يتختار -->
+    <RadioGroup
+        android:id="@+id/rg_motif_aa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb_tourisme_aa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/motif_tourisme" />
+
+        <RadioButton
+            android:id="@+id/rb_modification_aa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/motif_modification" />
+
+        <RadioButton
+            android:id="@+id/rb_fuite_aa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/motif_fuite" />
+    </RadioGroup>
+
+    <!-- 7) زر الفحص -->
+    <Button
+        android:id="@+id/btn_inspecter_aa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/btn_inspecter" />
+
+</LinearLayout>

@@ -1,3 +1,16 @@
+<!-- 1) مخزن نصوص الاستمارة (Activity 1) -->
 <resources>
-    <string name="app_name">DouaneTemporelle</string>
+    <!-- 2) اسم التطبيق -->
+    <string name="app_name">Douane Temporelle</string>
+    <!-- 3) نصوص التلميح داخل الخانات -->
+    <string name="hint_nom">Nom du voyageur</string>
+    <string name="hint_naissance">Année de naissance (ex: 1990)</string>
+    <string name="hint_destination">Année de destination (ex: 2050)</string>
+    <!-- 4) عنوان وخيارات سبب السفر -->
+    <string name="label_motif">Motif du voyage</string>
+    <string name="motif_tourisme">Tourisme</string>
+    <string name="motif_modification">Modification du passé</string>
+    <string name="motif_fuite">Fuite</string>
+    <!-- 5) نص الزر -->
+    <string name="btn_inspecter">Inspecter le profil</string>
 </resources>
