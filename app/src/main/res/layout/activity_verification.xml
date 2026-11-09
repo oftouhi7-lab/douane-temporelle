@@ -1,10 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<!-- 1) الجذر: LinearLayout أفقي (شرط الأستاذ) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VerificationActivity">
+    android:orientation="horizontal"
+    android:background="#FFF8E1"
+    android:weightSum="1">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- 2) الصورة على اليسار بوزن 0.3 -->
+    <ImageView
+        android:id="@+id/iv_photo_aa"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3"
+        android:background="#3F51B5"
+        android:padding="12dp"
+        android:src="@android:drawable/ic_menu_myplaces"
+        android:contentDescription="Photo" />
+
+    <!-- 3) RelativeLayout على اليمين بوزن 0.7 للنصوص -->
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.7"
+        android:padding="16dp">
+
+        <!-- 4) عنوان التذكرة -->
+        <TextView
+            android:id="@+id/tv_titre_aa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PASSEPORT TEMPOREL"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- 5) الاسم -->
+        <TextView
+            android:id="@+id/tv_nom_aa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_titre_aa"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp" />
+
+        <!-- 6) العمر الزمني -->
+        <TextView
+            android:id="@+id/tv_age_aa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_nom_aa"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp" />
+
+        <!-- 7) سبب السفر -->
+        <TextView
+            android:id="@+id/tv_motif_aa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_age_aa"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp" />
+
+        <!-- 8) زر الرفض أسفل الشاشة -->
+        <Button
+            android:id="@+id/btn_refuser_aa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Refuser (Risque de paradoxe)" />
+
+        <!-- 9) زر الموافقة فوق زر الرفض -->
+        <Button
+            android:id="@+id/btn_approuver_aa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btn_refuser_aa"
+            android:text="Approuver le saut temporel" />
+
+    </RelativeLayout>
+</LinearLayout>
