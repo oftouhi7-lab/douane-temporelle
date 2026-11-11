@@ -34,12 +34,13 @@ public class ResultActivity extends AppCompatActivity {
         //    مرفوض: خلفية حمراء ورسالة الاعتقال الزمني
         if (verdict) {
             racine.setBackgroundColor(Color.parseColor("#2E7D32"));
-            tvMessage.setText("Bon voyage " + nom);
+            // إضافة منا: رمز ✔ مع رسالة الموافقة
+            tvMessage.setText("✔\nBon voyage " + nom);
         } else {
             racine.setBackgroundColor(Color.parseColor("#C62828"));
-            tvMessage.setText(nom + " est en état d'arrestation temporelle");
+            // إضافة منا: رمز ✖ مع رسالة الاعتقال
+            tvMessage.setText("✖\n" + nom + " est en état d'arrestation temporelle");
         }
-
         // 8) زر "Nouveau voyageur": نرجع إلى MainActivity ونغلق الشاشات السابقة
         btnNouveau.setOnClickListener(new View.OnClickListener() {
             @Override
