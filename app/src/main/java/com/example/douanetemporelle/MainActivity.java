@@ -54,7 +54,15 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
             return;
         }
+        // 9-أ) تحويل السنوات إلى أرقام للتحقق منها
+        int anneeNaissance = Integer.parseInt(naissance);
+        int anneeDestination = Integer.parseInt(destination);
 
+        // 9-ب) سنة الوجهة لازم تكون أكبر من سنة الميلاد (إضافة منا)
+        if (anneeDestination <= anneeNaissance) {
+            Toast.makeText(this, "L'année de destination doit être après la naissance", Toast.LENGTH_SHORT).show();
+            return;
+        }
         // 10) معرفة سبب السفر المختار
         RadioButton choisi = findViewById(rgMotif.getCheckedRadioButtonId());
         String motif = choisi.getText().toString();
